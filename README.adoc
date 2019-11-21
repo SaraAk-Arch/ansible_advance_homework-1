@@ -26,3 +26,18 @@ ansible-playbook site-config-tower.yml -e tower_GUID=${TOWER_GUID} -e osp_GUID=$
 bastion]# sh /root/task.sh
 
 ----
+
+While running the task.sh might be you will get some error of package installation.
+
+which need to fix the repository on workstation server and rerun the script.
+
+once the script is completed successfully, kindly follow the below tasks on tower.
+
+login to the tower using weblink.
+
+go to the Templates.
+
+Run the cicd_workflow tasks to complete the homework.
+
+Thanks & Regards
+Manoj
