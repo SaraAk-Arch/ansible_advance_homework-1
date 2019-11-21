@@ -1,0 +1,28 @@
+======================== Ansible Tower Config ===================================
+
+
+- From the cloned repo run `site-config-tower.yml` playbook to create job templates and workflow template.
+
+
+bastion]# copy your generated pem file to /root/.ssh/mykey.pem
+bastion]# git clone https://github.com/naikmanoj77/ansible_advance_homework.git
+bastion]# cd 
+bastion]# pwd (/root)
+bastion]# cat task.sh
+
+cd /root/ansible_advance_homework
+export TOWER_GUID=< tower guid >
+export OSP_GUID= < open stack server id >
+export OPENTLC_LOGIN= < open stack login name >
+export OPENTLC_PASSWORD= < open stack password >
+export GITHUB_REPO=https://github.com/naikmanoj77/ansible_advance_homework_manoj.git
+export JQ_REPO_BASE=http://www.opentlc.com/download/ansible_bootcamp
+export REGION=us-east-1
+export RH_MAIL_ID=< compony mail id >
+SSK_KEY=/root/.ssh/mykey.pem
+#ansible-playbook site-setup-workstation.yml -e OSP_GUID=${OSP_GUID} --private-key=${SSK_KEY} -u ${OPENTLC_LOGIN}
+ansible-playbook site-config-tower.yml -e tower_GUID=${TOWER_GUID} -e osp_GUID=${OSP_GUID} -e opentlc_login=${OPENTLC_LOGIN} -e path_to_opentlc_key=${SSK_KEY} -e param_repo_base=${JQ_REPO_BASE} -e github_repo=${GITHUB_REPO} -e opentlc_password=${OPENTLC_PASSWORD} -e REGION_NAME=${REGION} -e EMAIL=${RH_MAIL_ID} -e OSP_GUID=${OSP_GUID}
+
+bastion]# sh /root/task.sh
+
+----
