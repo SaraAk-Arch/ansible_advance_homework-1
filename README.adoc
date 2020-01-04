@@ -20,3 +20,4 @@ export PRIVATE_KEY=/root/.ssh/mykey.pem
 export RH_MAIL_ID=sa0030514@techmahindra.com
 export OPENTLC_PASSWORD=M0ve1t@2019
 
+#Please check Ansible Homework_SaraAk_Arch.docx for detailed steps.
