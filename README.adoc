@@ -4,40 +4,19 @@
 - From the cloned repo run `site-config-tower.yml` playbook to create job templates and workflow template.
 
 
-bastion]# copy your generated pem file to /root/.ssh/mykey.pem
-bastion]# git clone https://github.com/naikmanoj77/ansible_advance_homework.git
-bastion]# cd 
-bastion]# pwd (/root)
-bastion]# cat task.sh
+# copy your generated pem file to /root/.ssh/mykey.pem
+# git clone https://github.com/SaraAk-Arch/ansible_advance_homework-1
 
-cd /root/ansible_advance_homework
-export TOWER_GUID=< tower guid >
-export OSP_GUID= < open stack server id >
-export OPENTLC_LOGIN= < open stack login name >
-export OPENTLC_PASSWORD= < open stack password >
-export GITHUB_REPO=https://github.com/naikmanoj77/ansible_advance_homework_manoj.git
+cd /root/ansible_advance_homework-1
+export TOWER_GUID=026f
+export MYKEY=/root/.ssh/mykey.pem
+export MYUSER=sa0030514-techmahindra.com
+export OSP_GUID=84fd
+export OPENTLC_LOGIN=sa0030514-techmahindra.com
+export GITHUB_REPO=https://github.com/SaraAk-Arch/ansible_advance_homework-1
 export JQ_REPO_BASE=http://www.opentlc.com/download/ansible_bootcamp
 export REGION=us-east-1
-export RH_MAIL_ID=< compony mail id >
-SSK_KEY=/root/.ssh/mykey.pem
-#ansible-playbook site-setup-workstation.yml -e OSP_GUID=${OSP_GUID} --private-key=${SSK_KEY} -u ${OPENTLC_LOGIN}
-ansible-playbook site-config-tower.yml -e tower_GUID=${TOWER_GUID} -e osp_GUID=${OSP_GUID} -e opentlc_login=${OPENTLC_LOGIN} -e path_to_opentlc_key=${SSK_KEY} -e param_repo_base=${JQ_REPO_BASE} -e github_repo=${GITHUB_REPO} -e opentlc_password=${OPENTLC_PASSWORD} -e REGION_NAME=${REGION} -e EMAIL=${RH_MAIL_ID} -e OSP_GUID=${OSP_GUID}
+export PRIVATE_KEY=/root/.ssh/mykey.pem
+export RH_MAIL_ID=sa0030514@techmahindra.com
+export OPENTLC_PASSWORD=M0ve1t@2019
 
-bastion]# sh /root/task.sh
-
-----
-
-While running the task.sh might be you will get some error of package installation.
-
-which need to fix the repository on workstation server and rerun the script.
-
-once the script is completed successfully, kindly follow the below tasks on tower.
-
-login to the tower using weblink.
-
-go to the Templates.
-
-Run the cicd_workflow tasks to complete the homework.
-
-Thanks & Regards
-Manoj
